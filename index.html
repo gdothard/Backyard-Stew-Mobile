@@ -16,7 +16,21 @@
             </div><!-- /header -->
         
             <div role="main" class="ui-content">
-                <p>Blah Blah Blah</p>
+                <script>
+                    var watchId = navigator.geolocation.watchPosition(geolocationSuccess);
+                    var onSuccess = function(position) {
+                            var element = document.getElementById('heading');
+                            element.innerHTML = 'Latitude: '          + position.coords.latitude          + '\n' +
+                              'Longitude: '         + position.coords.longitude         + '\n' +
+                              'Altitude: '          + position.coords.altitude          + '\n' +
+                              'Accuracy: '          + position.coords.accuracy          + '\n' +
+                              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                              'Heading: '           + position.coords.heading           + '\n' +
+                              'Speed: '             + position.coords.speed             + '\n' +
+                              'Timestamp: '         + position.timestamp                + '\n');
+                    };
+                </script>
+                <p id="heading"></p>
             </div><!-- /content -->
         
             <div data-role="footer">

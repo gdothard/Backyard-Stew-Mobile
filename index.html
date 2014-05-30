@@ -9,33 +9,33 @@
     </head>
     
     <body>
-        <div data-role="page">
-        
-            <div data-role="header">
-                <h1>Backyard Stew</h1>
-            </div><!-- /header -->
-        
-            <div role="main" class="ui-content">
-                <script>
-                    var watchId = navigator.geolocation.watchPosition(geolocationSuccess);
-                    var onSuccess = function(position) {
-                            var element = document.getElementById('heading');
-                            element.innerHTML = 'Latitude: '          + position.coords.latitude          + '\n' +
-                              'Longitude: '         + position.coords.longitude         + '\n' +
-                              'Altitude: '          + position.coords.altitude          + '\n' +
-                              'Accuracy: '          + position.coords.accuracy          + '\n' +
-                              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-                              'Heading: '           + position.coords.heading           + '\n' +
-                              'Speed: '             + position.coords.speed             + '\n' +
-                              'Timestamp: '         + position.timestamp                + '\n');
-                    };
-                </script>
-                <p id="heading"></p>
-            </div><!-- /content -->
-        
-            <div data-role="footer">
-                <h4>Footer type stuff</h4>
-            </div><!-- /footer -->
-        </div><!-- /page -->
+        <div data-role="page" id="home">
+
+	        <div data-role="header">
+		        <h1>Backyard Stew</h1>
+		        <a href="/m/" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+	        </div>
+	
+	        <div data-role="content">  
+	
+		        <div data-role="collapsible-set" data-inset="true">
+				        <ul data-role="listview" data-inset="false" data-theme="a">
+        	        <li><a href="/m/classifieds/">Classifieds</a></li>
+                    <li><a href="/m/calendar/">Events</a></li>
+                    <li><a href="/m/vendors/">Find Local Businesses</a></li>
+				        </ul>
+		        </div>
+		
+	        </div>
+		
+	        <div data-role="footer" data-position="fixed" data-id="nav">
+		        <div data-role="navbar">
+			        <ul>
+				        <li><a href="http://www.backyardstew.com/?site=full" data-ajax="false">Click Here to Visit our Full Site</a></li>
+			        </ul>
+		        </div>
+	        </div>
+	
+        </div>	
     </body>
 </html>

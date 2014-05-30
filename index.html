@@ -1,50 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-</head>
-
-<body>
-<h1>Hello World!</h1>
-<script>
-// onSuccess Callback
-// This method accepts a Position object, which contains the
-// current GPS coordinates
-//
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
-
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
-}
-
-function compassSuccess(heading) {
-    var element = document.getElementById('heading');
-    element.innerHTML = 'Heading: ' + heading.magneticHeading;
-};
-    $(document).ready(function(){
-            $("#geo").click(function(){
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-      });
-    });
-	var watchID = navigator.compass.watchHeading(compassSuccess, onError);
-
-</script>
-    <button id="geo">Get Location</button>
-    <button id="play">Get Heading</button>
-    <div id="heading">Heading:</div>
-</body>
+	<head>
+    	<title>Backyard Stew</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    </head>
+    
+    <body>
+        <div data-role="page">
+        
+            <div data-role="header">
+                <h1>Backyard Stew</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+                <p>Blah Blah Blah</p>
+            </div><!-- /content -->
+        
+            <div data-role="footer">
+                <h4>Footer type stuff</h4>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+    </body>
 </html>
